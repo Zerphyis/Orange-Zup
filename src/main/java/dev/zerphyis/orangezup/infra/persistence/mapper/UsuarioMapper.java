@@ -4,16 +4,15 @@ import dev.zerphyis.orangezup.domain.entities.Usuario;
 import dev.zerphyis.orangezup.domain.entities.vo.Cpf;
 import dev.zerphyis.orangezup.domain.entities.vo.Email;
 import dev.zerphyis.orangezup.infra.persistence.entity.UsuarioEntity;
-
-public final class UsuarioMapper {
-
-    private UsuarioMapper() {
-    }
+import org.springframework.stereotype.Component;
 
 
-    public static UsuarioEntity toDbEntity(Usuario usuario) {
+@Component
+public class UsuarioMapper {
+
+
+    public UsuarioEntity toDbEntity(Usuario usuario) {
         if (usuario == null) return null;
-
         return new UsuarioEntity(
                 null,
                 usuario.getNome(),
@@ -23,10 +22,8 @@ public final class UsuarioMapper {
         );
     }
 
-
-    public static Usuario toDomain(UsuarioEntity entity) {
+    public Usuario toDomain(UsuarioEntity entity) {
         if (entity == null) return null;
-
         return new Usuario(
                 entity.getNome(),
                 new Email(entity.getEmail()),
