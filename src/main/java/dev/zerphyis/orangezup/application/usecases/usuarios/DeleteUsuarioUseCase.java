@@ -1,8 +1,8 @@
-package dev.zerphyis.orangezup.application.usecases;
+package dev.zerphyis.orangezup.application.usecases.usuarios;
 
 import dev.zerphyis.orangezup.domain.entities.repository.UsuarioRepository;
 import dev.zerphyis.orangezup.domain.exception.InvalidCpfException;
-import dev.zerphyis.orangezup.domain.interfacecases.DeleteUsuarioInterface;
+import dev.zerphyis.orangezup.domain.interfacecases.usuarios.DeleteUsuarioInterface;
 
 public class DeleteUsuarioUseCase implements DeleteUsuarioInterface {
 
