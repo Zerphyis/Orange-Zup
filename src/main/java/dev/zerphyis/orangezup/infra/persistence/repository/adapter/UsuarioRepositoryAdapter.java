@@ -2,7 +2,7 @@ package dev.zerphyis.orangezup.infra.persistence.repository.adapter;
 
 import dev.zerphyis.orangezup.domain.entities.Usuario;
 import dev.zerphyis.orangezup.domain.entities.repository.UsuarioRepository;
-import dev.zerphyis.orangezup.infra.persistence.entity.UsuarioEntity;
+import dev.zerphyis.orangezup.domain.entities.vo.Email;
 import dev.zerphyis.orangezup.infra.persistence.mapper.UsuarioMapper;
 import dev.zerphyis.orangezup.infra.persistence.repository.UsuarioRepositoryJpa;
 import org.springframework.stereotype.Repository;
@@ -33,6 +33,12 @@ public class UsuarioRepositoryAdapter implements UsuarioRepository {
         return jpaRepository.findByCpf(cpf)
                 .map(mapper::toDomain);
     }
+
+    @Override
+    public Optional findByEmail(Email email) {
+        return jpaRepository.findByEmail(email);
+    }
+
 
     @Override
     public List<Usuario> findAll() {
