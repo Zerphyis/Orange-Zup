@@ -1,4 +1,4 @@
-package dev.zerphyis.orangezup.domain.interfacecases;
+package dev.zerphyis.orangezup.domain.interfacecases.usuarios;
 
 import dev.zerphyis.orangezup.domain.entities.Usuario;
 

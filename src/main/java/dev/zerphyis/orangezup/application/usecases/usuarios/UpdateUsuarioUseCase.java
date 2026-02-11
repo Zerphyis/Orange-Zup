@@ -1,11 +1,11 @@
-package dev.zerphyis.orangezup.application.usecases;
+package dev.zerphyis.orangezup.application.usecases.usuarios;
 
-import dev.zerphyis.orangezup.application.dto.UpdateUsuarioRequest;
+import dev.zerphyis.orangezup.application.dto.usuarios.UpdateUsuarioRequest;
 import dev.zerphyis.orangezup.domain.entities.Usuario;
 import dev.zerphyis.orangezup.domain.entities.repository.UsuarioRepository;
 import dev.zerphyis.orangezup.domain.entities.vo.Email;
 import dev.zerphyis.orangezup.domain.exception.InvalidCpfException;
-import dev.zerphyis.orangezup.domain.interfacecases.UpdateUsuarioInterface;
+import dev.zerphyis.orangezup.domain.interfacecases.usuarios.UpdateUsuarioInterface;
 
 public class UpdateUsuarioUseCase implements UpdateUsuarioInterface {
 

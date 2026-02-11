@@ -1,13 +1,13 @@
-package dev.zerphyis.orangezup.application.usecases;
+package dev.zerphyis.orangezup.application.usecases.usuarios;
 
-import dev.zerphyis.orangezup.application.dto.CreateUsuarioRequest;
+import dev.zerphyis.orangezup.application.dto.usuarios.CreateUsuarioRequest;
 import dev.zerphyis.orangezup.domain.entities.Usuario;
 import dev.zerphyis.orangezup.domain.entities.repository.UsuarioRepository;
 import dev.zerphyis.orangezup.domain.entities.vo.Cpf;
 import dev.zerphyis.orangezup.domain.entities.vo.Email;
 import dev.zerphyis.orangezup.domain.exception.InvalidCpfException;
 import dev.zerphyis.orangezup.domain.exception.InvalidEmailException;
-import dev.zerphyis.orangezup.domain.interfacecases.CreateUsuarioInterface;
+import dev.zerphyis.orangezup.domain.interfacecases.usuarios.CreateUsuarioInterface;
 
 public class CreateUsuarioUseCase implements CreateUsuarioInterface {
 
