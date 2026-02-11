@@ -1,8 +1,8 @@
-package dev.zerphyis.orangezup.application.usecases;
+package dev.zerphyis.orangezup.application.usecases.usuarios;
 
 import dev.zerphyis.orangezup.domain.entities.Usuario;
 import dev.zerphyis.orangezup.domain.entities.repository.UsuarioRepository;
-import dev.zerphyis.orangezup.domain.interfacecases.ListUsuarioInterface;
+import dev.zerphyis.orangezup.domain.interfacecases.usuarios.ListUsuarioInterface;
 
 import java.util.List;
 
