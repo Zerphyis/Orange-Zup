@@ -1,6 +1,6 @@
 package dev.zerphyis.orangezup.infra.config;
 
-import dev.zerphyis.orangezup.application.usecases.*;
+import dev.zerphyis.orangezup.application.usecases.usuarios.*;
 import dev.zerphyis.orangezup.domain.entities.repository.UsuarioRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
