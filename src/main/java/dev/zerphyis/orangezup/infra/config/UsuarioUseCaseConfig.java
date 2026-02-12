@@ -1,5 +1,6 @@
 package dev.zerphyis.orangezup.infra.config;
 
+import dev.zerphyis.orangezup.application.usecases.services.UsuarioService;
 import dev.zerphyis.orangezup.application.usecases.usuarios.*;
 import dev.zerphyis.orangezup.domain.entities.repository.UsuarioRepository;
 import org.springframework.context.annotation.Bean;
@@ -31,5 +32,11 @@ public class UsuarioUseCaseConfig {
     @Bean
     public ListUsuarioUseCase listUsuarioUseCase(UsuarioRepository repository) {
         return new ListUsuarioUseCase(repository);
+    }
+
+
+    @Bean
+    public UsuarioService usuarioService(CreateUsuarioUseCase createUseCase, UpdateUsuarioUseCase updateUseCase, DeleteUsuarioUseCase deleteUseCase, GetUsuarioCpfUseCase getByCpfUseCase, ListUsuarioUseCase listUseCase) {
+        return new UsuarioService(createUseCase, updateUseCase, deleteUseCase, getByCpfUseCase, listUseCase);
     }
 }
