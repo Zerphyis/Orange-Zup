@@ -2,12 +2,13 @@ package dev.zerphyis.orangezup.application.usecases.services;
 
 import dev.zerphyis.orangezup.application.dto.usuarios.CreateUsuarioRequest;
 import dev.zerphyis.orangezup.application.dto.usuarios.UpdateUsuarioRequest;
+import dev.zerphyis.orangezup.application.dto.usuarios.UsuarioResponse;
 import dev.zerphyis.orangezup.application.usecases.usuarios.*;
 import dev.zerphyis.orangezup.domain.entities.Usuario;
 
 import java.util.List;
-
 public class UsuarioService {
+
     private final CreateUsuarioUseCase createUseCase;
     private final UpdateUsuarioUseCase updateUseCase;
     private final DeleteUsuarioUseCase deleteUseCase;
@@ -28,11 +29,11 @@ public class UsuarioService {
         this.listUseCase = listUseCase;
     }
 
-    public Usuario create(CreateUsuarioRequest request) {
+    public UsuarioResponse create(CreateUsuarioRequest request) {
         return createUseCase.execute(request);
     }
 
-    public Usuario update(String cpf, UpdateUsuarioRequest request) {
+    public UsuarioResponse update(String cpf, UpdateUsuarioRequest request) {
         return updateUseCase.execute(cpf, request);
     }
 
@@ -40,11 +41,11 @@ public class UsuarioService {
         deleteUseCase.execute(cpf);
     }
 
-    public Usuario findByCpf(String cpf) {
+    public UsuarioResponse findByCpf(String cpf) {
         return getByCpfUseCase.execute(cpf);
     }
 
-    public List<Usuario> findAll() {
+    public List<UsuarioResponse> findAll() {
         return listUseCase.execute();
     }
 }

@@ -8,22 +8,31 @@ import dev.zerphyis.orangezup.domain.exception.InvalidNameException;
 import java.time.LocalDate;
 
 public class Usuario {
+    private Long id;
+    private  String nome;
+    private  Email email;
+    private  Cpf cpf;
+    private  LocalDate dataNascimento;
 
-    private final String nome;
-    private final Email email;
-    private final Cpf cpf;
-    private final LocalDate dataNascimento;
-
-    public Usuario(String nome, Email email, Cpf cpf, LocalDate dataNascimento) {
+    public Usuario(Long id, String nome, Email email, Cpf cpf, LocalDate dataNascimento) {
         validarNome(nome);
         validarEmail(email);
         validarCpf(cpf);
         validarDataNascimento(dataNascimento);
 
+        this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
+    }
+
+    public Usuario(String nome, Email email, Cpf cpf, LocalDate dataNascimento) {
+        this(null, nome, email, cpf, dataNascimento);
+    }
+
+    public Long getId() {
+        return id;
     }
 
     private void validarNome(String nome) {
@@ -65,4 +74,21 @@ public class Usuario {
     public LocalDate getDataNascimento() {
         return dataNascimento;
     }
+
+    public void setNome(String nome) {
+        validarNome(nome);
+        this.nome = nome;
+    }
+
+    public void setEmail(Email email) {
+        validarEmail(email);
+        this.email = email;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        validarDataNascimento(dataNascimento);
+        this.dataNascimento = dataNascimento;
+    }
+
+
 }

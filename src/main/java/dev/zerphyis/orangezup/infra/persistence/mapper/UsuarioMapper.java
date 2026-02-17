@@ -13,8 +13,9 @@ public class UsuarioMapper {
 
     public UsuarioEntity toDbEntity(Usuario usuario) {
         if (usuario == null) return null;
+
         return new UsuarioEntity(
-                null,
+                usuario.getId(),
                 usuario.getNome(),
                 usuario.getEmail().value(),
                 usuario.getCpf().value(),
@@ -24,7 +25,9 @@ public class UsuarioMapper {
 
     public Usuario toDomain(UsuarioEntity entity) {
         if (entity == null) return null;
+
         return new Usuario(
+                entity.getId(),
                 entity.getNome(),
                 new Email(entity.getEmail()),
                 new Cpf(entity.getCpf()),

@@ -15,7 +15,7 @@ public class DeleteUsuarioUseCase implements DeleteUsuarioInterface {
     @Override
     public void execute(String cpf) {
         if (!repository.existsByCpf(cpf)) {
-            throw new InvalidCpfException("Usuário não encontrado");
+            throw new InvalidCpfException("Usuário com CPF " + cpf + " não encontrado");
         }
 
         repository.deleteByCpf(cpf);
